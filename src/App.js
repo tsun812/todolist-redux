@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import "antd/dist/antd.less";
+import { Input, Button, List } from "antd";
 function App() {
+  const data = ["1", "2", "3"];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ marginLeft: "20px", marginTop: "20px" }}>
+      <div>
+        <Input
+          placeholder="Enter here"
+          style={{ width: "200px", marginRight: "20px" }}
+        />
+        <Button type="primary">Submit</Button>
+      </div>
+      <div>
+        <List
+          dataSource={data}
+          renderItem={(item) => <List.Item>{item}</List.Item>}
+          style={{ width: "200px" }}
+        />
+      </div>
     </div>
   );
 }
