@@ -18,5 +18,6 @@ const todoSlice = createSlice({
     },
   },
 });
+export const { add } = todoSlice.actions;
 export default todoSlice.reducer;
 // Will handle the action type `'counter/increment'`

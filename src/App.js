@@ -2,10 +2,11 @@ import "./App.css";
 import "antd/dist/antd.less";
 import { Input, Button, List } from "antd";
 import { useSelector, useDispatch } from "react-redux";
-
+import { add } from "./store/reducer";
 function App() {
-  const data = useSelector((state) => state.todo.value);
+  const data = useSelector((state) => state.todo);
   console.log(data);
+
   return (
     <div style={{ marginLeft: "20px", marginTop: "20px" }}>
       <div>
