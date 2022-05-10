@@ -18,7 +18,7 @@ function App() {
       <div>
         <List
           dataSource={data}
-          renderItem={(item) => <List.Item>{item}</List.Item>}
+          renderItem={(item) => <List.Item>{item.title}</List.Item>}
           style={{ width: "200px" }}
         />
       </div>
