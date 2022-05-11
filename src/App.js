@@ -2,7 +2,7 @@ import "./App.css";
 import "antd/dist/antd.less";
 import { Input, Button, List, Form } from "antd";
 import { useSelector, useDispatch } from "react-redux";
-import { add } from "./store/reducer";
+import { add, toggleCopmlete } from "./store/reducer";
 function App() {
   const data = useSelector((state) => state.todo);
   const dispatch = useDispatch();
