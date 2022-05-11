@@ -15,6 +15,7 @@ const todoSlice = createSlice({
         completed: false,
       };
       state.push(newTodo);
+      console.log(state);
     },
   },
 });
