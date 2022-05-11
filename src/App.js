@@ -1,6 +1,6 @@
 import "./App.css";
 import "antd/dist/antd.less";
-import { Input, Button, List, Form } from "antd";
+import { Input, Button, List, Form, Checkbox } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { add, toggleCopmlete } from "./store/reducer";
 function App() {
@@ -34,7 +34,23 @@ function App() {
       <div>
         <List
           dataSource={data}
-          renderItem={(item) => <List.Item>{item.title}</List.Item>}
+          renderItem={(item) => (
+            <List.Item>
+              <Form>
+                <Form.Item
+                  name="complete"
+                  valuePropName="checked"
+                  wrapperCol={{
+                    offset: 8,
+                    span: 16,
+                  }}
+                >
+                  <Checkbox></Checkbox>
+                </Form.Item>
+              </Form>
+              {item.title}
+            </List.Item>
+          )}
           style={{ width: "200px" }}
         />
       </div>
