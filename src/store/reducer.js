@@ -18,7 +18,7 @@ const todoSlice = createSlice({
       console.log(state);
     },
     //action for (un)marking complete task
-    togoComplete: (state, action) => {
+    toggleComplete: (state, action) => {
       const index = state.findIndex(
         (element) => element.id === action.payload.id
       );
@@ -26,6 +26,6 @@ const todoSlice = createSlice({
     },
   },
 });
-export const { add, toggleCopmlete } = todoSlice.actions;
+export const { add, toggleComplete } = todoSlice.actions;
 export default todoSlice.reducer;
 // Will handle the action type `'counter/increment'`
