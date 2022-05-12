@@ -8,7 +8,7 @@ const todoSlice = createSlice({
     { id: "3", title: "todo3", completed: false },
   ],
   reducers: {
-    add: (state, action) => {
+    addTodo: (state, action) => {
       const newTodo = {
         id: Date.now(),
         title: action.payload.title,
@@ -24,8 +24,11 @@ const todoSlice = createSlice({
       );
       state[index].completed = action.payload.completed;
     },
+    deleteTodo: (state, action) => {
+      return state.filter((element) => element.id !== action.payload.id);
+    },
   },
 });
-export const { add, toggleComplete } = todoSlice.actions;
+export const { addTodo, toggleComplete, deleteTodo } = todoSlice.actions;
 export default todoSlice.reducer;
 // Will handle the action type `'counter/increment'`

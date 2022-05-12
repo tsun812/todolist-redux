@@ -1,8 +1,8 @@
 import "./App.css";
-import "antd/dist/antd.less";
+import "antd/dist/antd.css";
 import { Input, Button, List, Form } from "antd";
 import { useSelector, useDispatch } from "react-redux";
-import { add, toggleCopmlete } from "./store/reducer";
+import { addTodo } from "./store/reducer";
 import TodoListItem from "./TodoListItem";
 export default function TodoList() {
   const data = useSelector((state) => state.todo);
@@ -13,7 +13,7 @@ export default function TodoList() {
     console.log(e);
     //dispatched object will get mapped to action payload
     let value = e.title;
-    dispatch(add({ title: value }));
+    dispatch(addTodo({ title: value }));
   };
   return (
     <div style={{ marginLeft: "20px", marginTop: "20px" }}>
