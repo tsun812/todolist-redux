@@ -1,9 +1,10 @@
 import "./App.css";
 import "antd/dist/antd.less";
-import { Input, Button, List, Form, Checkbox } from "antd";
+import { Input, Button, List, Form } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { add, toggleCopmlete } from "./store/reducer";
-function App() {
+import TodoListItem from "./TodoListItem";
+export default function TodoList() {
   const data = useSelector((state) => state.todo);
   const dispatch = useDispatch();
   console.log(data);
@@ -35,21 +36,11 @@ function App() {
         <List
           dataSource={data}
           renderItem={(item) => (
-            <List.Item>
-              <Form>
-                <Form.Item
-                  name="complete"
-                  valuePropName="checked"
-                  wrapperCol={{
-                    offset: 8,
-                    span: 16,
-                  }}
-                >
-                  <Checkbox></Checkbox>
-                </Form.Item>
-              </Form>
-              {item.title}
-            </List.Item>
+            <TodoListItem
+              id={item.id}
+              title={item.title}
+              completed={item.completed}
+            />
           )}
           style={{ width: "200px" }}
         />
@@ -57,5 +48,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
